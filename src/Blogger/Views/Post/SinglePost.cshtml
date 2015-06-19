@@ -1,0 +1,23 @@
+﻿@model Blogger.Models.Post
+
+
+<div>
+
+    <h2>@ViewBag.Title</h2>
+
+
+    @if (User.Identity.IsAuthenticated && User.Identity.Name == Model.PosterEmail)
+    {
+        @Html.ActionLink("", "GetEditPostView", "Post", new { id = Model.Slug }, new { @class = "btn btn-primary btn-lg glyphicon glyphicon-pencil pull-right" })
+    }
+
+</div>
+<br>      
+      <h3><strong>@Model.Title</strong></h3>
+<br>
+
+        <h4>@Model.Text</h4><br>
+
+        Posted by @Model.PosterEmail at @Model.TimeStamp
+   
+
