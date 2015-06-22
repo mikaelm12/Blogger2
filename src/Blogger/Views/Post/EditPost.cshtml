@@ -1,0 +1,27 @@
+﻿@model Blogger.Models.Post
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+
+
+<form asp-controller="Post" asp-action="UpdatePost">
+   
+        <div>
+            <strong><p>Edit your post</p></strong>
+            <div class="form-group">
+                <input type="text"  name="Title"  class="form-control" value="@Model.Title" id="usr">
+            </div>
+            <input name="id" type="text" value="@Model.PostId" hidden />
+           <!--<input type="text" value="@Model.Title" /><br /><br /> --> 
+            <textarea class=" form-control" name="Text" id="Post" rows="15" cols="100">@Model.Text</textarea>
+        </div>
+       
+            <div>
+                <button type="submit" class="btn btn-success form-submit-smaller btn-lg post-button pull-right">Save</button><br /><br /><br />
+            </div>
+        
+   
+</form>
